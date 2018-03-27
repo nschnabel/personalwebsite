@@ -2,29 +2,39 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>TA Emergency Coverage System</title>
+       
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- import jQuery -->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>   
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="typed.js"></script>
 
+        <!-- import local styling -->
+        <link rel="stylesheet" href="base.css">
+        
         <!-- import bootstrap -->      
         <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 
-              
-        <!-- import local styling -->
-        <link rel="stylesheet" href="base.css">
-
         <!-- import local scripts -->
-        <script defer src="client.js"></script>
+        <script defer src="main.js"></script>
    
     </head>
     <body>
         
-<div class = "header">
-Nick Schnabel
+<div class = "bg container-fluid">
+    <div id = "welcome">
+        <div id = "innerWelcome"></div>
+        <div id = "subWelcome">
+            <span id = "Ima"></span> 
+            <span id = "Title"></span> 
+        </div> 
+    </div>
 </div>
+<div class = "container-fluid">
+    <div class = "row" id = "about-me"> <h2>About Me</h2> </div>
+</div>
+
         
 </body>
 </html>

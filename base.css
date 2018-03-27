@@ -1,3 +1,106 @@
-html {
-    background-color: #edebe1;
+@font-face {
+    font-family: langdon;
+    src: url(fonts/Langdon.otf);
 }
+
+@font-face {
+    font-family: product-sans;
+    src: url(fonts/ProductSansRegular.ttf);
+}
+
+@font-face {
+    font-family: product-sans-bold;
+    src: url(fonts/ProductSansBold.ttf);
+}
+
+@font-face {
+    font-family: product-sans-italic;
+    src: url(fonts/ProductSansItalic.ttf);
+}
+
+@font-face {
+    font-family: product-sans-bold-italic;
+    src: url(fonts/ProductSansBoldItalic.ttf);
+}
+
+body, html {
+    height: 100%;
+}
+
+.bg { 
+    /* The image used */
+    background-image: url("landingpage.jpg");
+
+    /* Full height */
+     height: 50%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.cursor{
+    font-family: helvetica;
+    font-weight: 100;
+}
+
+#welcome {
+    color: white;
+    line-height: 1.1;
+    position: absolute;
+    left: 18%;
+    top: 20%;
+}
+
+#innerWelcome{
+    font-family: product-sans-bold-italic;
+    font-size: 7vw;
+}
+
+#subWelcome{
+    font-family: product-sans;
+    font-weight: 200;
+    font-size: 4vw;
+}
+
+
+@media only screen and (min-width: 576px) {
+    .bg {
+        height: 70%; 
+    }
+    
+    #welcome {
+    left: 18%;
+    top: 27%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .bg {
+        height: 90%; 
+    }
+    
+    #welcome {
+    left: 18%;
+    top: 34%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .bg {
+        height: 100%; 
+    }
+
+}
+
+#about-me{
+    min-height: 300px;
+    background-color: #dddddd;
+}
+
+h2{
+    
+}
+
