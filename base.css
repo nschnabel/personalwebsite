@@ -1,6 +1,32 @@
+font-family: 'Lora', serif;
+font-family: 'Fenix', serif;
+font-family: 'IBM Plex Serif', serif;
+font-family: 'Merriweather', serif;
+font-family: 'Playfair Display', serif;
+font-family: 'PT Serif', serif;
+font-family: 'Crimson Text', serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Muli', sans-serif;
+
 @font-face {
     font-family: langdon;
     src: url(fonts/Langdon.otf);
+}
+
+@font-face {
+    font-family: GT;
+    src: url(fonts/GT.otf);
+}
+
+@font-face {
+    font-family: GT-light;
+    src: url(fonts/GTLight.otf); 
+}
+
+@font-face {
+    font-family: adobe-garamond;
+    src: url(fonts/AdobeGaramond.ttf);
 }
 
 @font-face {
@@ -23,11 +49,22 @@
     src: url(fonts/ProductSansBoldItalic.ttf);
 }
 
+hr { 
+    display: block;
+    margin-top: -2.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    line-height: 1.6em;
+}
+
 body, html {
     height: 100%;
 }
 
-.bg { 
+#bg { 
     /* The image used */
     background-image: url("landingpage.jpg");
 
@@ -38,7 +75,12 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position:relative;
 
+}
+
+#main-container{
+    min-height: 100%;
 }
 
 .cursor{
@@ -48,14 +90,14 @@ body, html {
 
 #welcome {
     color: white;
-    line-height: 1.1;
+    line-height: 1.0;
     position: absolute;
     left: 18%;
-    top: 20%;
+    top: 15%;
 }
 
 #innerWelcome{
-    font-family: product-sans-bold-italic;
+    font-family: product-sans-bold;
     font-size: 7vw;
 }
 
@@ -65,42 +107,132 @@ body, html {
     font-size: 4vw;
 }
 
+#learn-more{
+    border: 2px solid white;
+    margin: 0 auto;
+    padding: 9px 17px;
+    color : white;
+    font-family: GT-light;
+    letter-spacing: 0.2em;
+    font-size: 9px;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+    
+}
+
+#learn-more:hover{
+    color : #333333;
+    background-color: white;
+    
+}
+
+#btn-wrapper{
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+}
+
+.navbar-default {
+    background-color:transparent;
+    border: none;
+    font-family: Muli;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-weight: 100;
+}
+
+.navbar-nav li{
+    padding: 0px 10px;
+    background-color: white;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #AAAAAA;
+}
+
+.navbar-default .navbar-nav>li>a.active{
+    color: #333333;
+    background-color: white;
+}
+
 
 @media only screen and (min-width: 576px) {
-    .bg {
+    #bg {
         height: 70%; 
+    }
+    
+    #btn-wrapper{
+        top: 48%;
     }
     
     #welcome {
     left: 18%;
-    top: 27%;
+    top: 22%;
+    }
+    
+    #learn-more{
+        padding: 9px 17px;
+        font-size: 9px;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .bg {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+    
+    
+    #bg {
         height: 90%; 
+    }
+    
+    #btn-wrapper{
+        top: 63%;
     }
     
     #welcome {
     left: 18%;
-    top: 34%;
+    top: 29%;
+    }
+    
+    #learn-more{
+        padding: 14px 25px;
+        font-size: 13px;
     }
 }
 
 @media only screen and (min-width: 992px) {
-    .bg {
+    #bg {
         height: 100%; 
+    }
+    
+    #btn-wrapper{
+        top: 70%;
+    }
+    
+    #learn-more{
+        padding: 18px 34px;
+        font-size: 15px;
     }
 
 }
 
 #about-me{
     min-height: 300px;
-    background-color: #dddddd;
 }
 
 h2{
-    
+    font-family: product-sans-bold;
+    font-size: 50px;
+    color: #333333;
+    text-align: center;
 }
+
+
 

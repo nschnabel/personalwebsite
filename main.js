@@ -1,5 +1,5 @@
 $(function() {
-    var titles = ["traveler.", "graphic designer.", "photographer.", "n adventurer.", "content creator.", "n engineer."]
+    var titles = ["traveler.", "graphic designer.", "photographer.", "n engineer.", "content creator.", "n adventurer."]
     
     setTimeout(typeText, 2000, "Hi, I'm Nick.", $("#innerWelcome"), 50, 2, false);
     setTimeout(typeText, 4850,"I'm a", $("#Ima"), 50, 0);
@@ -12,15 +12,16 @@ $(function() {
         if(i != titles.length - 1)
         {    
             setTimeout(typeText, time, titles[i] , $("#Title"), 30, 0.5, true);
-            time += ((titles[i].length)*30 + 600);
+            time += ((titles[i].length)*30 + 550);
             setTimeout(deleteText, time, $("#Title"), 30);
             time += (titles[i].length)*30 + 100;
         }
         else
         {
-            setTimeout(typeText, time, titles[i] , $("#Title"), 30, 0, true);
+            setTimeout(typeText, time, titles[i] , $("#Title"), 30, 1, true);
             time += ((titles[i].length)*30 + 600);
             
+            $("#learn-more").delay(time + 1000).fadeIn(500);
         }
     }
     
@@ -79,7 +80,7 @@ $(function() {
         function writeWelcome() {
           if (i < txt.length) {
 //            element.text(element.text().replace(/\|/g, ''));
-            textInput.append(txt.charAt(i));
+            textInput.text(textInput.text() + txt.charAt(i));
 //            element.append("|");
             i++;
             setTimeout(writeWelcome, timeout);
@@ -134,4 +135,15 @@ $(function() {
         }
 
     }
+});
+
+
+$("#learn-more").click(function(){
+    //alert("hi");
+    //$("#bg").animate({bottom: "1000px"}, 2000);
+    $('html,body').animate({
+        scrollTop: $("#main-container").offset().top},
+        'slow', 
+        'linear', 
+        function() {$("#bg").hide()});
 });
