@@ -2,11 +2,11 @@ $(function() {
     var titles = ["traveler.", "graphic designer.", "photographer.", "n engineer.", "content creator.", "n adventurer."]
     
     setTimeout(typeText, 2000, "Hi, I'm Nick.", $("#innerWelcome"), 50, 2, false);
-    setTimeout(typeText, 4850,"I'm a", $("#Ima"), 50, 0);
-    setTimeout(typeText, 5100, titles[0] , $("#Title"), 50, 2, false);
-    setTimeout(deleteText,7550, $("#Title"), 50);
+    setTimeout(typeText, 5050,"I'm a", $("#Ima"), 50, 0);
+    setTimeout(typeText, 5200, titles[0] , $("#Title"), 50, 0.5, false);
+    setTimeout(deleteText,6250, $("#Title"), 50);
     
-    var time = 8050;
+    var time = 6750;
     for(var i = 1 ; i < titles.length ; i++)
     {
         if(i != titles.length - 1)
@@ -21,7 +21,7 @@ $(function() {
             setTimeout(typeText, time, titles[i] , $("#Title"), 30, 1, true);
             time += ((titles[i].length)*30 + 600);
             
-            $("#learn-more").delay(time + 1000).fadeIn(500);
+            $("#learn-more").delay(time + 300).fadeIn(500);
         }
     }
     

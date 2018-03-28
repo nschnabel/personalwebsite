@@ -22,6 +22,9 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+        
         <!-- import local styling -->
         <link rel="stylesheet" href="base.css">
 
@@ -47,36 +50,60 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#" class = "active">ABOUT</a></li>
+        <li><a href="#">ABOUT</a></li>
         <li><a href="#">RESUME</a></li> 
         <li><a href="#">PORTFOLIO</a></li>
-        <li><a href="#">TRAVEL</a></li>
+        <li><a href="#" class = "active">TRAVEL</a></li>
       </ul>
     <hr class = "navline">
     </div>
   </div>
 </nav>
         
-    <div id = "About" class = "container" style = "padding: 80px 0">
+    <div id = "Travel" class = "container" style = "padding: 35px 0">
+
+       <div class = "row">
+        <div class = "col-sm-10 col-sm-push-1">
+        <div id='map' style='width: 100%; height: 550px;'></div>
+            </div>
+        </div> 
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibnNjaG5hYmVsIiwiYSI6ImNqZmJleXV2YjBvajEzMm0xampjMHZxM2QifQ.Z2UL8WSsKJ0Xx78QSDAS4w';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/nschnabel/cjfbg16fj039l2squtf99bv2i'
+});
     
-    <div class = "col-sm-4" style = "padding-top: 25px"><img id = "headshot" src="headshot.png" alt="Headshot"></div>
-    <div class = "col-sm-8">
-        <p>Hi, I'm Nick</p>
-        <br>
-        <p><strong>Formally</strong>, I'm an electrical (and software) engineering student at Santa Clara University</p>
-        <p><strong>Informally</strong>, I'm someone who loves sports, the outdoors, and good company</p>
-        <br>
-        <p>My passions include design, web development, traveling, photography, and music, and I love working on projects that bring aesthetic design and interactivity to the forefront</p>
-        
-        <p>I'm always seeking to be inspired and love to meet new people, so let's get in touch!</p>
-        
-        
+map.on('click', function(e) {
+  var features = map.queryRenderedFeatures(e.point, {
+    layers: ['travels', 'plannedtravels1', 'plannedtravels2'] // replace this with the name of the layer
+  });
+
+  if (!features.length) {
+    return;
+  }
+
+  var feature = features[0];
+
+  var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<div style ="margin-top: 7px" class = "map-label">' + feature.properties.title + '</div>')
+    .setLngLat(feature.geometry.coordinates)
+    .addTo(map);
+});
+    
+map.setZoom(0.8);
+map.setCenter([4.474574, 26.156311])
+    
+</script>
+    
+        <div class = "row" style="margin: 15px 0">
+            <div class ="col-sm-10 col-sm-push-1"><div id = "travel-icon" style="float:left"></div><span style="float:left; margin-left: 3px">Visted</span>
+            <div id = "destination-icon" style="float:left; margin-left: 20px"></div><span style="float:left; margin-left: 3px">Planned (Summer/Fall 2018)</span></div>
         </div>
+            
         
-    
-    
-    </div>  
-        
+    </div>
         
 <div class = "container-fluid" style="padding: 0px 30px"><hr>
     <div class = "footer">
