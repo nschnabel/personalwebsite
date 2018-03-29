@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+       
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Fenix|IBM+Plex+Serif|Lora|Merriweather|PT+Serif|Playfair+Display" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+        
+        <!-- import local styling -->
+        <link rel="stylesheet" href="base.css">
+
+        <!-- import local scripts -->
+        <script defer src="main.js"></script>
+   
+    </head>
+    <body>
+
+<div class = "container-fluid main-container">
+    <div class = "row" style ="padding: 40px 0">
+        <h2>Nick Schnabel</h2>
+    </div>
+    
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">RESUME</a></li> 
+        <li><a href="#" class = "active">PORTFOLIO</a></li>
+        <li><a href="#" >TRAVEL</a></li>
+      </ul>
+    <hr class = "navline">
+    </div>
+  </div>
+</nav>
+        
+    <div id = "Portfolio" class = "container" style = "padding: 35px 0; text-align: center">
+        <div class ="row" style="margin:0 10px">
+        <nav class="navbar navbar-default">
+            <div class = "col-sm-4"><a href="#" class = "active">PHOTOGRAPHY</a></div>
+            <div class = "col-sm-4"><a href="#">GRAPHIC DESIGN</a></div>
+            <div class = "col-sm-4"><a href="#">PROJECTS</a></div>
+        </nav>
+            <div class = "photography-gallery">
+                <div id = "photo-col-1" class = "column"></div>
+                <div id = "photo-col-2" class = "column"></div>
+                <div id = "photo-col-0" class = "column"></div>
+            </div>
+            
+            
+<div id="myModal" class="modal">
+<span class="numbertext"><span id = "pic-num"></span></span>    
+  <a class="close-btn cursor" onclick="closeModal()">&times;</a>
+  <div class="modal-contents">
+  </div>
+</div>      
+        
+            <script>
+            var folder = "images/";
+                $.ajax({
+                    url : folder,
+                    success: function (data) {
+                        var j = 1;
+                        $(data).find("a").attr("href", function (i, val) {
+                            if( val.match(/\.(jpe?g|png|gif)$/) ) {
+                                $("#photo-col-" + (j%3)).append( "<img style= 'width:100%'src='"+ folder + val +"'  onclick='openModal();currentSlide("+j+")' class='hover-shadow cursor'></div>" );
+                                $(".modal-contents").append('<div class="mySlides"><img src="'+ folder + val +'" style="max-height: 500px; max-width:100%"></div>')
+                                j++;
+                            } 
+                        });
+                        $('.numbertext').append("/" + (j-1));
+                        
+                    }
+                });
+                
+            $(".modal-contents").append('<a class="prev" onclick="plusSlides(-1)">&#10094;</a><a class="next" onclick="plusSlides(1)">&#10095;</a>')
+            $(".modal-contents").append('<div class="caption-container"><p id="caption"></p></div>');
+                
+                
+            function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  $("#pic-num").text(n);
+  var slides = document.getElementsByClassName("mySlides");
+  //var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+//  for (i = 0; i < dots.length; i++) {
+//    dots[i].className = dots[i].className.replace(" active", "");
+//  }
+//alert(slideIndex);
+  slides[slideIndex-1].style.display = "block";
+ // dots[slideIndex-1].className += " active";
+  //dcaptionText.innerHTML = dots[slideIndex-1].alt;
+}
+                
+                
+            </script>
+            
+            
+        </div>    
+    </div>
+        
+<div class = "container-fluid" style="padding:10px"><hr>
+    <div class = "footer">
+        <span style=" margin-left:20px"><a href="#" class="fa fa-facebook"></a></span>
+        <span style="margin: 0 3px"><a href="#" class="fa fa-linkedin"></a></span>
+        <span><a href="#" class="fa fa-github"></a></span>
+        <span style="margin: 0 3px"><a href="#" class="fa fa-envelope"></a></span>
+    </div>
+</div>
+    </div>
+    </body>
+</html>
