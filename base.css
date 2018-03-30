@@ -63,10 +63,11 @@ hr {
     margin-bottom: 0.5em;
     margin-left: auto;
     margin-right: auto;
-    border-style: inset;
     border-width: 1px;
+    border-top: 1px solid #ccc;
     line-height: 1.6em;
 }
+
 
 hr.navline{
     margin-top: -2.5em;
@@ -332,8 +333,13 @@ body, html {
     background-color: white;
 }
 
+.description{
+       padding-top: 10px; 
+ }
+
 
 @media only screen and (min-width: 576px) {
+
     #bg {
         height: 70%; 
     }
@@ -356,6 +362,11 @@ body, html {
 }
 
 @media only screen and (min-width: 768px) {
+    .description{
+       padding-top: 80px; 
+    }
+
+    
     .column {
     -ms-flex: 33.333%;
     flex: 33.333%;
@@ -393,6 +404,10 @@ body, html {
 }
 
 @media only screen and (min-width: 992px) {
+    .description{
+       padding-top: 150px; 
+    }
+    
     #bg {
         height: 100%; 
     }
@@ -419,21 +434,15 @@ h2{
     text-align: center;
 }
 
+.graphic{
+    width:100%;
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+.graphic:hover{
+    cursor:pointer;
+}
 
 
 /* The Modal (background) */
@@ -455,7 +464,7 @@ h2{
   position: relative;
   background-color: transparent;
   margin: auto;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
   width: 90%;
   max-width: 1200px;
 }
@@ -468,6 +477,11 @@ h2{
   right: 25px;
   font-size: 30px;
   font-weight: bold;
+}
+
+#graphic-modal{
+    height: 100%;
+    background-color: rgb(0,0,0,0.9);
 }
 
 .close-btn:hover,
@@ -490,7 +504,7 @@ h2{
   top: 50%;
   left: 0;
   width: auto;
-  padding: 16px;
+  padding: 10px;
   margin-top: -50px;
   color: rgb(255,255,255,0.5);
   font-weight: bold;
@@ -507,7 +521,7 @@ h2{
   top: 50%;
   right: 0;
   width: auto;
-  padding: 16px;
+  padding: 10px;
   margin-top: -50px;
   color: rgb(255,255,255,0.5);
   font-weight: bold;
@@ -520,7 +534,10 @@ h2{
 
 a:hover{
     text-decoration: none;
-    color: white;
+    font-size:105%;
+    transition: 0.3s ease;
+    cursor: pointer;
+    color: #337ab7;
 }
 
 /* Position the "next button" to the right */
@@ -568,13 +585,20 @@ img.hover-shadow {
 
 
 
+.graphic-row>div { 
+    margin:0;
+    padding: 10px;
+    float:left;
+    
+}
 
 
+.geofilter {
+    width:100%;
+    padding: 7.5px
+}
 
-
-
-
-
-
-
+.geofilter:hover {
+    cursor:pointer;
+}
 
