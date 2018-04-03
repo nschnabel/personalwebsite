@@ -16,42 +16,42 @@ font-family: 'Muli', sans-serif;
 
 @font-face {
     font-family: langdon;
-    src: url(fonts/Langdon.otf);
+    src: url(../fonts/Langdon.otf);
 }
 
 @font-face {
     font-family: GT;
-    src: url(fonts/GT.otf);
+    src: url(../fonts/GT.otf);
 }
 
 @font-face {
     font-family: GT-light;
-    src: url(fonts/GTLight.otf); 
+    src: url(../fonts/GTLight.otf); 
 }
 
 @font-face {
     font-family: adobe-garamond;
-    src: url(fonts/AdobeGaramond.ttf);
+    src: url(../fonts/AdobeGaramond.ttf);
 }
 
 @font-face {
     font-family: product-sans;
-    src: url(fonts/ProductSansRegular.ttf);
+    src: url(../fonts/ProductSansRegular.ttf);
 }
 
 @font-face {
     font-family: product-sans-bold;
-    src: url(fonts/ProductSansBold.ttf);
+    src: url(../fonts/ProductSansBold.ttf);
 }
 
 @font-face {
     font-family: product-sans-italic;
-    src: url(fonts/ProductSansItalic.ttf);
+    src: url(../fonts/ProductSansItalic.ttf);
 }
 
 @font-face {
     font-family: product-sans-bold-italic;
-    src: url(fonts/ProductSansBoldItalic.ttf);
+    src: url(../fonts/ProductSansBoldItalic.ttf);
 }
 
 strong{
@@ -139,7 +139,7 @@ body, html {
 
 #bg { 
     /* The image used */
-    background-image: url("landingpage.jpg");
+    background-image: url("../images/landingpage.jpg");
 
     /* Full height */
      height: 50%; 
@@ -270,7 +270,7 @@ body, html {
 */
 
 .footer{
-    padding: 10px 0;
+    padding: 10px 15px;
 }
 
 #learn-more:hover{
@@ -288,6 +288,12 @@ body, html {
     width: 100%;
     position: absolute;
 }
+
+#home-btn button:hover {
+    color: #333 !important;
+}
+
+
 
 
 
@@ -537,10 +543,15 @@ a:hover{
     font-size:105%;
     transition: 0.3s ease;
     cursor: pointer;
-    color: #337ab7;
 }
 
-/* Position the "next button" to the right */
+.footer a:hover, .modal a:hover{
+    color: white;
+}
+
+img:hover{
+    cursor:pointer;
+}
 
 
 /* On hover, add a black background color with a little bit see-through */
@@ -601,4 +612,5 @@ img.hover-shadow {
 .geofilter:hover {
     cursor:pointer;
 }
+
 

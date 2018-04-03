@@ -3,10 +3,10 @@ $(function() {
     
     setTimeout(typeText, 2000, "Hi, I'm Nick.", $("#innerWelcome"), 50, 2, false);
     setTimeout(typeText, 5050,"I'm a", $("#Ima"), 50, 0);
-    setTimeout(typeText, 5200, titles[0] , $("#Title"), 50, 0.5, false);
-    setTimeout(deleteText,6250, $("#Title"), 50);
+    setTimeout(typeText, 5300, titles[0] , $("#Title"), 50, 0.5, false);
+    setTimeout(deleteText,6350, $("#Title"), 50);
     
-    var time = 6750;
+    var time = 6850;
     for(var i = 1 ; i < titles.length ; i++)
     {
         if(i != titles.length - 1)
@@ -21,25 +21,9 @@ $(function() {
             setTimeout(typeText, time, titles[i] , $("#Title"), 30, 1, true);
             time += ((titles[i].length)*30 + 600);
             
-            $("#learn-more").delay(time + 300).fadeIn(500);
+            $("#learn-more").delay(time).fadeIn(500);
         }
     }
-    
-//    setTimeout(deleteText, titles[0].length*50 + 7100, $("#Title"), 50);
-//    setTimeout(typeText, 8100,titles[1], $("#Title"), 50, 0.5, true);    
-//    setTimeout(deleteText, 9950, $("#Title"), 50);
-//    setTimeout(typeText, 5300,"photographer.", $("#Title"), 50, 2);
-//    setTimeout(deleteText, 7850, $("#Title"), 50);
-//    setTimeout(typeText, 5300,"content creator.", $("#Title"), 50, 2);
-//    setTimeout(deleteText, 7850, $("#Title"), 50);
-//    setTimeout(typeText, 5300,"adventurer.", $("#Title"), 50, 2);
-//    setTimeout(deleteText, 7850, $("#Title"), 50);
-//    setTimeout(typeText, 5300,"n engineer.", $("#Title"), 50, 2);
-//    setTimeout(deleteText, 7850, $("#Title"), 50);
-
-//    typeText("I'm a", $("#Ima"), 75, 0);
-//    typeText("n engineer.", $("#Title"), 75, 3);
-//    deleteText($("#Title"), 75);
     
     function typeText (txt, element, timeout, secondsToToggle, exists)
     {
@@ -102,8 +86,7 @@ $(function() {
             else{
                 cursor.hide();
             }
-        }
-        
+        }     
     }
     
     function deleteText(element, timeout)
@@ -137,13 +120,12 @@ $(function() {
     }
 });
 
-
 $("#learn-more").click(function(){
     //alert("hi");
     //$("#bg").animate({bottom: "1000px"}, 2000);
     $('html,body').animate({
         scrollTop: $("#main-container").offset().top},
-        'slow', 
-        'linear', 
+        300, 
+        'swing', 
         function() {$("#bg").hide()});
 });

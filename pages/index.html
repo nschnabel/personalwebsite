@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html ng-app="website" lang="en">
+    <head>
+        <meta charset="UTF-8">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Import jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <!-- Import Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <!-- Import AngularJS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+ 
+        <!-- Import Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Fenix|IBM+Plex+Serif|Lora|Merriweather|PT+Serif|Playfair+Display" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!-- Import Map Box -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+        
+        <!-- Import local styling -->
+        <link rel="stylesheet" href="../css/base.css">
+
+        <!-- Import local scripts -->
+        <script defer src="app.js"></script>
+    </head>
+    <body>
+        
+<!--//////////////////////////   Header   ///////////////////////////-->
+
+<div class = "container-fluid main-container">
+    <div class = "row" style ="padding-top: 25px; padding-bottom: 15px;">
+        <h2>Nick Schnabel</h2>
+    </div>
+        
+<!--//////////////////////////   Nav Bar   ///////////////////////////-->
+    
+<nav class="navbar navbar-default" ng-contoller = 'HeaderContoller'>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a class = "nav-btn" href="#/about">ABOUT</a></li>
+        <li><a class = "nav-btn" href="#/resume">RESUME</a></li> 
+        <li><a class = "nav-btn" href="#/portfolio">PORTFOLIO</a></li>
+        <li><a class = "nav-btn" href="#/travels">TRAVEL</a></li>
+      </ul>
+    <hr class = "navline">
+    </div>
+  </div>
+</nav>
+    
+<script>
+        $("#myNavbar a").each(function(){
+            var path = ""+$(this).attr('href');
+            var currentLocation = ""+window.location;
+            if (currentLocation.indexOf(path) > 0)
+            {
+                $(this).addClass("active");
+            }
+            else
+            {
+                $(this).removeClass("active");
+            }
+        });
+        
+        $("#myNavbar a").click(function(){
+            $("#myNavbar .active").removeClass("active");
+            $(this).addClass("active");
+        });
+        //alert(window.location.pathname);
+     // $('# a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+</script>
+
+<!--//////////////////////////   Main Content   ///////////////////////////-->
+    
+      <div ng-view></div>
+
+<!--//////////////////////////   Footer   ///////////////////////////-->    
+    
+<div class = "container-fluid">
+    <div class = "footer">
+        <hr> 
+        <div style="padding:10px">
+            <span style=" margin-left:20px"><a href="https://www.facebook.com/nick.schnabel.33" class="fa fa-facebook"></a></span>
+            <span style="margin: 0 3px"><a href="https://www.linkedin.com/in/nick-schnabel-11465493/" class="fa fa-linkedin"></a></span>
+            <span><a href="https://github.com/nschnabel" class="fa fa-github"></a></span>
+            <span style="margin: 0 3px"><a href="mailto:nick_schnabel@yahoo.com " class="fa fa-envelope"></a></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </body>
+</html>

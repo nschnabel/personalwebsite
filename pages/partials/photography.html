@@ -1,0 +1,89 @@
+<div id = "sub-nav" class = "container" style = "padding-top: 35px; padding-bottom: 5px; text-align: center">    
+    <nav class="navbar navbar-default">
+            <div class = "col-sm-4"><a href="#/portfolio/photography" class = "active">PHOTOGRAPHY</a></div>
+            <div class = "col-sm-4"><a href="#/portfolio/graphic-design">GRAPHIC DESIGN</a></div>
+            <div class = "col-sm-4"><a href="#/portfolio/projects">PROJECTS</a></div>
+        </nav>
+</div>
+
+<div id = "Portfolio" class = "container" style = "text-align: center">
+        <div class ="row" style="margin:0 10px">
+
+            <div class = "photography-gallery">
+                <div id = "photo-col-1" class = "column"></div>
+                <div id = "photo-col-2" class = "column"></div>
+                <div id = "photo-col-0" class = "column"></div>
+            </div>
+            
+            
+<div id="myModal" class="modal" style="display:none">
+<span class="numbertext"><span id = "pic-num"></span></span>    
+  <a class="close-btn cursor">&times;</a>
+  <div class="modal-contents">
+      <img id = "pic-container" style="max-height: 500px; max-width:100%">
+      <a class="prev">&#10094;</a><a class="next">&#10095;</a>
+  </div>
+    <div class="caption-container"><p id="caption"></p></div>
+</div>      
+        
+            <script>
+                
+            var urls = [""];
+            var numPics = 0;
+            var folder = "../images/photographs/";
+                $.ajax({
+                    url : folder,
+                    success: function (data) {
+                        var j = 1;
+                        $(data).find("a").attr("href", function (i, val) {
+                            if( val.match(/\.(jpe?g|png|gif)$/) ) {
+                                $("#photo-col-" + (j%3)).append( "<img style= 'width:100%'src='"+ folder + val +"'  onclick='openSlide("+j+ ")' class='hover-shadow cursor'></div>" );
+                                urls[j] = folder + val;
+                                 j++;
+                            } 
+                        });
+                        numPics = j - 1;
+                        $('.numbertext').append("/" + numPics);
+                        
+                    }
+                });
+                
+
+$(".close-btn").click(function() {
+    $("#myModal").hide();
+});
+
+$(".prev").click(function() {
+    plusSlides(-1);
+});
+
+$(".next").click(function() {
+    plusSlides(1);
+});
+var slideIndex = 1;
+// Next/previous controls
+function plusSlides(n) {
+  openSlide(slideIndex += n);
+}
+
+function openSlide(n) {
+    if(n>numPics)
+    {
+        slideIndex = 1;
+    }
+    else if (n<=0)
+    {
+        slideIndex = numPics;
+    }
+    else
+    {
+        slideIndex = n;
+    }
+  $("#pic-num").text(slideIndex);
+  $("#pic-container").attr("src", urls[slideIndex]);
+  $("#myModal").show();
+}                              
+            </script>
+                    
+        </div>    
+    </div>
