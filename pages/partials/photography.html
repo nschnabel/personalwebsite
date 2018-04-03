@@ -30,7 +30,7 @@
                 
             var urls = [""];
             var numPics = 0;
-            var folder = "../images/photographs/";
+            var folder = "../images/compressed/";
                 $.ajax({
                     url : folder,
                     success: function (data) {
@@ -38,7 +38,7 @@
                         $(data).find("a").attr("href", function (i, val) {
                             if( val.match(/\.(jpe?g|png|gif)$/) ) {
                                 $("#photo-col-" + (j%3)).append( "<img style= 'width:100%'src='"+ folder + val +"'  onclick='openSlide("+j+ ")' class='hover-shadow cursor'></div>" );
-                                urls[j] = folder + val;
+                                urls[j] = "../images/photographs/" + val;
                                  j++;
                             } 
                         });
