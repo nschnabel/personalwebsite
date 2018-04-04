@@ -538,6 +538,18 @@ h2{
   -webkit-user-select: none;
 }
 
+
+
+
+button:active:focus,
+button:focus {
+  outline: 0 !important;
+  outline-offset: 0  !important;
+  background-image: none  !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none  !important;
+}
+
 a:hover{
     text-decoration: none;
     font-size:105%;
