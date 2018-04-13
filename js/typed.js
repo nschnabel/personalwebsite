@@ -3,10 +3,10 @@ $(function() {
     
     setTimeout(typeText, 2000, "Hi, I'm Nick.", $("#innerWelcome"), 50, 2, false);
     setTimeout(typeText, 5050,"I'm a", $("#Ima"), 50, 0);
-    setTimeout(typeText, 5300, titles[0] , $("#Title"), 50, 0.5, false);
-    setTimeout(deleteText,6350, $("#Title"), 50);
+    setTimeout(typeText, 5350, titles[0] , $("#Title"), 50, 0.5, false);
+    setTimeout(deleteText,6400, $("#Title"), 50);
     
-    var time = 6850;
+    var time = 6900;
     for(var i = 1 ; i < titles.length ; i++)
     {
         if(i != titles.length - 1)

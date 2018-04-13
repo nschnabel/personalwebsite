@@ -6,4 +6,105 @@
         </nav>
 </div>
 
-<div>In progress</div>
+<div id = "Projects" class = "container" style = "text-align: center; margin-top:30px">
+        <div class = "col-sm-10 col-sm-push-1">
+        <div class = "row" style = "padding-bottom: 100px">
+                <div class = "col-sm-6">
+                    <img class = "graphic" src="../images/projects/personalwebsite.png" style = "border:1px solid #ddd;width:100%">
+                </div>
+                <div class = "project-description col-sm-6" style = "text-align: center;">
+                    <b>This website!</b>
+                    <br>
+                    <br>
+                    Built entirely from scratch with HTML, CSS, Javascipt, jQuery, Bootstrap, and AngularJS.
+                    <br>
+                    <br>
+                    <a style ="color: #333;" target="_blank" href="https://github.com/nschnabel/personalwebsite" class="fa fa-github"></a>
+                </div>
+        </div>
+        <div class = "row" style = "padding-bottom: 100px">
+                <div class = "col-sm-6">
+                    <img class = "graphic" src="../images/projects/vu_off.jpg">
+                </div>
+                <div class = "project-description col-sm-6" style = "text-align: center;">
+                    <b>Arduino LED VU-Meter</b>
+                    <br>
+                    <br>
+                    LED tower that reads input from a microphone and lights up its rows corresponding to the volume level. Passes the audio signal through an RC low-pass filter to give precedence to the lower frequencies (bass) of received signals. Contolled with an <a class = "link" target="_blank" href="https://www.adafruit.com/product/2590">Adafruit 5V Metro Mini</a>, programmed in C.
+                    <br>
+                    <br>
+                    <a style ="color: #333; margin:5px; " target="_blank" href="https://github.com/nschnabel/VUtower" class="fa fa-github"></a>
+                    <a style ="color: #333 ;margin:5px;" target="_blank" href="https://youtu.be/XDInT9yeDAc" class="fa fa-video-camera"></a>
+                </div>
+        </div>
+            
+                <div class = "row" style = "padding-bottom: 100px">
+                <div class = "col-sm-6">
+                    <img class = "graphic" src="../images/projects/taemergency.png">
+                   
+                </div>
+                <div class = "project-description col-sm-6" style = "text-align: center;">
+                    <b>TA Emergency Coverage System</b>
+                    <br>
+                    <br>
+                    Web application that allows teaching assitants to easily find a replacement when they cannot teach a lab section. Built using HTML, CSS, Bootstrap, Javascript, Jquery, AJAX, PHP, and MySQL.
+                    <br>
+                    <br>
+                    <a style ="color: #333; margin:5px; " target="_blank" href="https://github.com/amartin96/COEN174Lab" class="fa fa-github"></a>
+                    <a style ="color: #333 ;margin:5px;" target="_blank" href="https://youtu.be/RrSwE6s_kEw" class="fa fa-video-camera"></a>
+                </div>
+        </div>
+            
+            
+            
+        
+        <div class = "row" style = "padding-bottom: 100px">
+                <div class = "col-sm-6">
+                    <img class = "graphic" src="../images/projects/phonecharger.jpg">
+                </div>
+                <div class = "project-description  col-sm-6" style = "text-align: center;">
+                    <b>Portable Phone Charger</b>
+                    <br>
+                    <br>
+                    Portable phone charger designed on Autodesk EAGLE, printed on a circuit board, and soldered all together. Housed in a custom case made from 3D-printed and laser-cut parts.
+                    <br>
+                    <br>
+                    <a style ="color: #333 ;margin:5px;" target="_blank" href="https://youtu.be/H0nyeK4LcQY" class="fa fa-video-camera"></a>
+                </div>
+        </div>
+            
+        <div class = "row" style = "padding-bottom: 100px">
+                <div class = "col-sm-6">
+                    <img class = "graphic" src="../images/projects/infinitytable.jpg">
+                </div>
+                <div class = "project-description col-sm-6" style = "text-align: center;">
+                    <b>LED Inifinity Table</b>
+                    <br>
+                    <br>
+                    Table with a regular mirror on the bottom and an acrylic one-way mirror on the top that makes it look like it descends infinitely when the lights are turned on. Contolled with an <a class = "link" target="_blank" href="https://www.adafruit.com/product/1501?gclid=EAIaIQobChMIitfn75Kg2gIVCZ7ACh0DVAGtEAQYASABEgIu8vD_BwE">Adafruit 5V Trinket</a>, programmed in C.
+                    <br>
+                    <br>
+                    <a style ="color: #333 ;margin:5px;" target="_blank" href="https://www.youtube.com/watch?v=0-ivJ4WOnb0" class="fa fa-video-camera"></a>
+                </div>
+        </div>
+            
+        <div id = "graphic-modal" class = "modal" style="display: none; padding-top:30px">
+                <a id ="graphic-close" class="close-btn cursor">&times;</a>
+                <img id = "img-holder" style = "max-height: 95%; max-width:95% ">
+        </div>
+            
+            <script>  
+    
+    $('.graphic').click(function() {
+        $('#img-holder').attr('src',$(this).attr('src'));
+        $('#graphic-modal').show();
+    });
+
+    $('#graphic-close').click(function() {
+        $('#graphic-modal').hide();
+    });
+    
+    </script>
+            
+    </div>
+</div>

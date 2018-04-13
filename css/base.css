@@ -250,7 +250,7 @@ body, html {
 }
 
 
-.fa {
+.footer .fa {
     padding: 6px;
     font-size: 14px;
     width: 27px;
@@ -339,7 +339,7 @@ body, html {
     background-color: white;
 }
 
-.description{
+.description, .project-description{
        padding-top: 10px; 
  }
 
@@ -370,6 +370,10 @@ body, html {
 @media only screen and (min-width: 768px) {
     .description{
        padding-top: 80px; 
+    }
+    
+    .project-description{
+       padding-top: 50px; 
     }
 
     
@@ -412,6 +416,10 @@ body, html {
 @media only screen and (min-width: 992px) {
     .description{
        padding-top: 150px; 
+    }
+    
+    .project-description{
+       padding-top: 100px; 
     }
     
     #bg {
@@ -550,11 +558,32 @@ button:focus {
   box-shadow: none  !important;
 }
 
+#Projects a.link:hover{
+    font-size:100%;
+}
+
+#Projects a.fa{
+    font-size:30px;
+}
+
+#Projects a.fa:hover{
+    font-size:33px;
+}
+
+a:hover, /* OPTIONAL*/
+a:visited,
+a:focus
+{text-decoration: none !important;}
+
 a:hover{
     text-decoration: none;
     font-size:105%;
     transition: 0.3s ease;
     cursor: pointer;
+}
+
+a:active{
+    text-decoration: none;
 }
 
 .footer a:hover, .modal a:hover{
