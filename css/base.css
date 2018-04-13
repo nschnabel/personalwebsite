@@ -235,7 +235,7 @@ body, html {
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
-    background-color: hsl(202, 77%, 59%);
+    background-color: rgb(0, 170, 170);
 }
 
 #destination-icon {
@@ -245,14 +245,19 @@ body, html {
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
-    background-color: hsl(0, 65%, 69%);
+    background-color: rgb(60, 60, 60);
 ;
 }
 
 
 .footer .fa {
-    padding: 6px;
-    font-size: 14px;
+    padding-top: 7px;
+    padding-left: 1px;
+    font-size: 13px;
+    color:white;
+}
+
+.footer .fa-holder {
     width: 27px;
     height: 27px;
     text-align: center;
@@ -260,14 +265,29 @@ body, html {
     border-radius: 50%;
     background-color: #333333;
     color:white;
+    transition: 0.3s ease !important;
 }
 
-/*
-.fa-github{
-    font-size: 18px;
-    padding:5px;
+.footer .fa-holder:hover{
+    width: 27px;
+    height: 27px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: #0099a4;
+    color:white;
 }
-*/
+
+
+.footer .fa-github{
+    font-size: 16px;
+    padding-top:5px;
+    padding-right:1px;
+}
+
+.footer .fa-envelope{
+    padding-right: 1px;
+}
 
 .footer{
     padding: 10px 15px;
@@ -448,6 +468,8 @@ h2{
     text-align: center;
 }
 
+
+
 .graphic{
     width:100%;
 }
@@ -558,6 +580,11 @@ button:focus {
   box-shadow: none  !important;
 }
 
+#Projects a.fa {
+    color: #333;
+    transition: 0.3s ease !important;
+}
+
 #Projects a.link:hover{
     font-size:100%;
 }
@@ -567,7 +594,7 @@ button:focus {
 }
 
 #Projects a.fa:hover{
-    font-size:33px;
+    color: #0099a4;
 }
 
 a:hover, /* OPTIONAL*/

@@ -33,18 +33,20 @@
 
         <!-- Import local scripts -->
         <script defer src="app.js"></script>
+        
+        <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     </head>
     <body>
         
 <!--//////////////////////////   Header   ///////////////////////////-->
 
 <div class = "container-fluid main-container">
+
     <div class = "row" style ="padding-top: 25px; padding-bottom: 15px;">
-        <h2>Nick Schnabel</h2>
+        <a id="header" href = "#/about"><h2>Nick<span style="color:#0099a4">Schnabel</span></h2></a>
     </div>
         
-<!--//////////////////////////   Nav Bar   ///////////////////////////-->
-    
+<!--//////////////////////////   Nav Bar   ///////////////////////////--> 
 <nav class="navbar navbar-default" ng-contoller = 'HeaderContoller'>
   <div class="container-fluid">
     <div class="navbar-header">
@@ -66,6 +68,7 @@
   </div>
 </nav>
     
+    
 <script>
         $("#myNavbar a").each(function(){
             var path = ""+$(this).attr('href');
@@ -80,9 +83,15 @@
             }
         });
         
+        
         $("#myNavbar a").click(function(){
             $("#myNavbar .active").removeClass("active");
             $(this).addClass("active");
+        });
+    
+        $("#header").click(function(){
+            $("#myNavbar .active").removeClass("active");
+            $("#myNavbar ul li:first-child a").addClass("active");
         });
         //alert(window.location.pathname);
      // $('# a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
@@ -95,13 +104,13 @@
 <!--//////////////////////////   Footer   ///////////////////////////-->    
     
 <div class = "container-fluid">
-    <div class = "footer">
+    <div class = "footer" style ="padding-bottom: 50px">
         <hr> 
         <div style="padding:10px">
-            <span style=" margin-left:20px"><a target="_blank" href="https://www.facebook.com/nick.schnabel.33" class="fa fa-facebook"></a></span>
-            <span style="margin: 0 3px"><a  target="_blank"href="https://www.linkedin.com/in/nick-schnabel-11465493/" class="fa fa-linkedin"></a></span>
-            <span><a target="_blank" href="https://github.com/nschnabel" class="fa fa-github"></a></span>
-            <span style="margin: 0 3px"><a target="_blank" href="mailto:nick_schnabel@yahoo.com " class="fa fa-envelope"></a></span>
+            <div class = "fa-holder" style="float: left; margin-left:20px"><a target="_blank" href="https://www.facebook.com/nick.schnabel.33" class="fa fa-facebook"></a></div>
+            <div class = "fa-holder" style="float: left; margin: 0 3px"><a  target="_blank"href="https://www.linkedin.com/in/nick-schnabel-11465493/" class="fa fa-linkedin"></a></div>
+            <div class = "fa-holder" style="float: left;"><a target="_blank" href="https://github.com/nschnabel" class="fa fa-github"></a></div>
+            <div class = "fa-holder" style="float: left; margin: 0 3px"><a target="_blank" href="mailto:nick_schnabel@yahoo.com " class="fa fa-envelope"></a></div>
         </div>
     </div>
 </div>
